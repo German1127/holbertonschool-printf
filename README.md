@@ -15,4 +15,4 @@ Creating your own function printf.
 Returns -1.
 
 ## Format of the Argument String
- * The **format** string argument is a character string consisting of zero or more directives: ordinary characters (other than **%**)
+ * The ***format*** string argument is a character string consisting of zero or more directives: ordinary characters (other than ***%***)
