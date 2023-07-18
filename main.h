@@ -8,4 +8,14 @@
 /**
  *
  */
+typedef struct op
+{
+	char op;
+	int (*f)(va_list);
+			
+} op_t;
+
 int _printf(const char *format, ...);
+int _putchar(char c);
+
+#endif
