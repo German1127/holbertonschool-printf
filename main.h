@@ -1,5 +1,7 @@
-#ifndef main_h
-#define main_h
+#ifndef MAIN_H
+#define MAIN_H
+
+//librerias//
 
 #include <stdarg.h>
 #include <unistd.h>
@@ -8,6 +10,8 @@
 /**
  *
  */
+
+//esta funcion devuelve salida estandar//
 typedef struct op
 {
 	char op;
@@ -15,7 +19,12 @@ typedef struct op
 			
 } op_t;
 
+//prototipo//
+
 int _printf(const char *format, ...);
+
+//prot _putchar//
+
 int _putchar(char c);
 
 #endif
