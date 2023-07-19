@@ -1,29 +1,114 @@
 #include "main.h"//llama al main.h//
 /**
- * get_op_func - gets a function
- * @s: the operator
- * Return: Pointer to one of the functions
+ * get_op_func - function.
+ * @t_step: conversion specifiers.
+ * @args: arguments.
+ * Return: char count.
  */
-int (*get_op_func(char s))(va_list)
+int get_op_func(char t_step, va_list args)
 {
-	//esta expresión inicializa el arreglo ops con una serie//
-	//de valores numéricos y funciones asociadas//
-	//Cada valor numérico representa un tipo de operación y está asociado//
-	//a una función específica que se utilizará para realizar esa operación//
-	op_t ops[] = {
-		{'c', printChar},//v. num de 10 y una función llamada printChar//
-		{'s', printString},//v. num de 11 y una función llamada printString//
-		{'%', printSign},//v. num de 12 y una función llamada printSign//
-		{'d', printNum},//v. num de 13 y una función llamada printNum//
-		{'i', printNum},//v. num de 14 y una función llamada printNum//
+	int i = 0;
+	int count = 0;
+
+	op_t step[] = {
+		{'c', printchar},
+		{'s', printstring},
+		{'%', printsign},
+		{'d', printdigit},
+		{'i', printdigit},
+		{0, NULL}
 	};
-
-	size_t i;//declara una variable llamada i con el tipo size_t//
-
-	for (i = 0; i < sizeof(ops) / sizeof(op_t); i++)
+	while (step[i].op)
 	{
-		if (ops[i].op == s)
-			return (ops[i].f);
+		if (t_step == step[i].op)
+			count += step[i].f(args);
+		i++;
 	}
-	return (NULL);
+
+	if (count == 0)
+	{
+		count += _putchar('%');
+		count += _putchar(t_step);
+	}
+	return (count);
+}
+
+#include "main.h"
+#include <unistd.h>
+
+/**
+ * printdigit - print integers.
+ * @args: argument.
+ * Return: count chars.
+ */
+int printdigit(va_list args)
+{
+	int decimal = 1;
+	int count = 0;
+	long int digit = va_arg(args, int);
+	long int digit2;
+
+	if (digit < 0)
+	{
+		count += _putchar('-');
+		digit *= -1;
+	}
+
+	if (digit < 10)
+		return (count += _putchar(digit + '0'));
+
+	digit2 = digit;
+
+	while (digit2 > 9)
+	{
+		count += _putchar(((digit / decimal) % 10) + '0');
+		decimal /= 10;
+	}
+	return (count);
+}
+
+#include "main.h"
+#include <unistd.h>
+
+/**
+ * printsign - print sign.
+ * @args: arguments.
+ * Return: count chars.
+ */
+
+int printsign(va_list args)
+{
+	(void)args;
+
+	_putchar('%');
+
+	return (1);
+}
+
+#include "main.h"
+#include <unistd.h>
+#include <stdarg.h>
+
+/**
+ * printstring - print string.
+ * @args: argument.
+ * Return: character count.
+ */
+
+int printstring(va_list args)
+{
+	int i;
+	int count = 0;
+	char *str = va_arg(args, char *);
+
+	if (!str)
+		str = "(null)";
+
+	if (str[0] == '\0')
+		return (-1);
+
+	for (i = 0; str[i] != '\0'; i++)
+		count += _putchar(str[i]);
+
+	return (count);
 }
