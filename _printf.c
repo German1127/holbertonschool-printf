@@ -2,8 +2,8 @@
 #include <unistd.h>
 /**
  * _printf - create printf.
- * @format: Format.
- * Return: count chars.
+ *@format: Format.
+ *Return: count chars.
  */
 int _printf(const char *format, ...)
 {
