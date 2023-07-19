@@ -1,11 +1,13 @@
 #include "main.h"//llama al main.h//
+
 /**
- * get_op_func - function.
+ * get_function - function.
  * @t_step: conversion specifiers.
  * @args: arguments.
  * Return: char count.
  */
-int get_op_func(char t_step, va_list args)
+
+int get_function(char t_step, va_list args)
 {
 	int i = 0;
 	int count = 0;
@@ -18,6 +20,7 @@ int get_op_func(char t_step, va_list args)
 		{'i', printdigit},
 		{0, NULL}
 	};
+
 	while (step[i].op)
 	{
 		if (t_step == step[i].op)
@@ -30,7 +33,26 @@ int get_op_func(char t_step, va_list args)
 		count += _putchar('%');
 		count += _putchar(t_step);
 	}
+
 	return (count);
+}
+
+#include "main.h"
+#include <unistd.h>
+
+/**
+ * printchar - print char
+ * @args: argument.
+ * Return: count chars.
+ */
+
+int printchar(va_list args)
+{
+	char c = va_arg(args, int);
+
+	_putchar(c);
+
+	return (1);
 }
 
 #include "main.h"
@@ -41,6 +63,7 @@ int get_op_func(char t_step, va_list args)
  * @args: argument.
  * Return: count chars.
  */
+
 int printdigit(va_list args)
 {
 	int decimal = 1;
@@ -61,9 +84,15 @@ int printdigit(va_list args)
 
 	while (digit2 > 9)
 	{
+		decimal *= 10;
+		digit2 /= 10;
+	}
+	while (decimal >= 1)
+	{
 		count += _putchar(((digit / decimal) % 10) + '0');
 		decimal /= 10;
 	}
+
 	return (count);
 }
 
