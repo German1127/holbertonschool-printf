@@ -41,9 +41,9 @@ int get_function(char t_step, va_list args)
 #include <unistd.h>
 
 /**
- * printchar - print char
- * @args: argument.
- * Return: count chars.
+ *printchar - print char
+ *@args: argument.
+ *Return: count chars.
  */
 
 int printchar(va_list args)
