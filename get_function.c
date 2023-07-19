@@ -1,4 +1,4 @@
-#include "main.h"//llama al main.h//
+#include "main.h"
 
 /**
  *get_function - function.
