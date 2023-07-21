@@ -1,6 +1,4 @@
-## Return
-  * On success, _printf returns the number of characters printed (excluding the null byte). If an exit error is given.
-Returns -1.
+
 
 ## Format of the Argument String
  * The ***format*** string argument is a character string consisting of zero or more directives: ordinary characters (other than ***%***)
@@ -32,6 +30,7 @@ https://github.com/German1127/holbertonschool-printf/assets/135637506/c01aeb5b-6
 
 ## Table of contents
 * [Introduction](#introduction)
+* [Return](#return)
 * [Tasks](#tasks)
 * [Requirements](#requirements)
 * [Resources](#resources)
@@ -42,7 +41,12 @@ https://github.com/German1127/holbertonschool-printf/assets/135637506/c01aeb5b-6
 ## Introduction
 The project its about construct our own Printf to learn a get deeper into C lenguage. This objective is given us by Holberton School as our first pair programming project.
 
-## Tasks
+## Return
+On success, _printf returns the number of characters printed (excluding the null byte). If an exit error is given.
+Returns -1.
+
+<details>
+<summary><h2>Tasks</h2></summary>
 0 : I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life : A function that produces output according to a format.
 * Prototype: int _printf(const char *format, ...);
 * Returns: the number of characters printed (excluding the null byte used to end output to strings)
@@ -68,6 +72,7 @@ The project its about construct our own Printf to learn a get deeper into C leng
 
 2 : Just because it's in print doesn't mean it's the gospel : Create a man page for your function.
 * How to read the man page: man ./man_3_printf
+</details>
 
 ## Resources
 
@@ -105,7 +110,22 @@ The prototypes of all your functions should be included in your header file call
 </details>
 
 ## Files
-Placeholder
+1. [_printf.c](#_printf.c)
+2. [_putchar.c](#_putchar.c)
+3. [get_function.c](#get_function.c)
+4. [main.c](#main.c)
+5. [main.h](#main.h)
+
+<a name="_printf.c"></a>
+<h3><a href="https://github.com/German1127/holbertonschool-printf/blob/master/_printf.c">_printf.c</a></h3>
+<a name="_putchar.c"></a>
+<h3><a href="https://github.com/German1127/holbertonschool-printf/blob/master/_putchar.c">_putchar.c</a></h3>
+<a name="get_function.c"></a>
+<h3><a href="https://github.com/German1127/holbertonschool-printf/blob/master/get_function.c">get_function.c</a></h3>
+<a name="main.c"></a>
+<h3><a href="https://github.com/German1127/holbertonschool-printf/blob/master/main.c">main.c</a></h3>
+<a name="main.h"></a>
+<h3><a href="https://github.com/German1127/holbertonschool-printf/blob/master/main.h">main.h</a></h3>
 
 ## Usage
 
