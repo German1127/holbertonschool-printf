@@ -127,9 +127,11 @@ The prototypes of all your functions should be included in your header file call
 <a name="main.h"></a>
 <h3><a href="https://github.com/German1127/holbertonschool-printf/blob/master/main.h">main.h</a></h3>
 
-## Usage
-
-
+<details><summary><h2>Usage</h2></summary>
+<details><summary><h3>Flowchart</h3></summary>
+![Flowchart printf 100 (1) drawio](https://github.com/German1127/holbertonschool-printf/assets/135637506/e76988af-e234-4e17-862d-8011d1489217)
+</details>
+</details>
 <div align="center">
 
 ## Authors
