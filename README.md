@@ -1,13 +1,3 @@
-
-
-## Format of the Argument String
- * The ***format*** string argument is a character string consisting of zero or more directives: ordinary characters (other than ***%***)
- * The conversion specification is entered with the % character
- * It ends with a conversion specifier (which together make up the format specifier.)
-
-## Compilation
-* gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test/main.c *.c -o print
-
 <div align="center">
 
 https://github.com/German1127/holbertonschool-printf/assets/135637506/c01aeb5b-62a6-4087-9522-f8735ed1171b
@@ -107,31 +97,75 @@ The prototypes of all your functions should be included in your header file call
 * ```va_end (man 3 va_end)```
 * ```va_copy (man 3 va_copy)```
 * ```va_arg (man 3 va_arg)```
+
+<h3>Compilation</h3>
+* gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test/main.c *.c -o print
 </details>
 
 ## Files
 1. [_printf.c](#_printf.c)
 2. [_putchar.c](#_putchar.c)
 3. [get_function.c](#get_function.c)
-4. [main.c](#main.c)
 5. [main.h](#main.h)
 
 <a name="_printf.c"></a>
 <h3><a href="https://github.com/German1127/holbertonschool-printf/blob/master/_printf.c">_printf.c</a></h3>
+Main code of the printf function, when the format its NULL, starts with '%' followed by NULL or stars with '% ' followed by NULL, return -1 and finish. The main function consist in check if the current character is '%'.If it is right, it checks whether the next character is a format specifier. If it is, it executes the rest of the code. If it is 'NULL', it returns -1 and finishes.
 <a name="_putchar.c"></a>
 <h3><a href="https://github.com/German1127/holbertonschool-printf/blob/master/_putchar.c">_putchar.c</a></h3>
+a function that it`s a simplified versions of normal putchar, having only a write. (simply to make the line shorter).
 <a name="get_function.c"></a>
 <h3><a href="https://github.com/German1127/holbertonschool-printf/blob/master/get_function.c">get_function.c</a></h3>
-<a name="main.c"></a>
-<h3><a href="https://github.com/German1127/holbertonschool-printf/blob/master/main.c">main.c</a></h3>
+find and run the print function corresponding to the format type specified by t_step. Return the number of characters printed by the format function or 0 if not find a corresponding function. It is used in conjunction with the function printf to process specific formats.
 <a name="main.h"></a>
 <h3><a href="https://github.com/German1127/holbertonschool-printf/blob/master/main.h">main.h</a></h3>
+contains the structures, prototypes and headers macros used by functions.
 
 <details><summary><h2>Usage</h2></summary>
 <details><summary><h3>Flowchart</h3></summary>
-![Flowchart printf 100 (1) drawio](https://github.com/German1127/holbertonschool-printf/assets/135637506/e76988af-e234-4e17-862d-8011d1489217)
+ ![Flowchart printf 100 (1) drawio](https://github.com/German1127/holbertonschool-printf/assets/135637506/38ceac38-f3c9-48f2-88fb-8f969022ff32)
 </details>
+<h3>Format of the Argument String</h3>
+ 
+* The ***format*** string argument is a character string consisting of zero or more directives: ordinary characters (other than ***%***).
+ 
+* The conversion specification is entered with the % character.
+
+* It ends with a conversion specifier (which together make up the format specifier).
+<h3>Instructions</h3>
+ To use _printf in your projects you need to follow the steps below.
+ 
+ 1. Copy the "main.h", "_printf.c", "get_function.c" and "_putchar.c" files to your project directory.
+ 
+ 3. Include "main.h" in your header file like this:
+```
+#include "main.h"</code>
+```
+ 
+ 4. Write this in your terminal when you are in your project folder.
+ ```
+ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 test/main.c *.c -o print</code>
+ ``` 
+ 5. Use it like a normal printf.
+
+<h3>Example</h3>
+
+For example, if i want to print "Test string" i will do:
+```c
+#include "main.h"
+int main()
+{
+	_printf("%s\n", "Test string");
+	return(0);
+}
+```
+and the ouput will be:
+```c
+Test String
+```
+
 </details>
+
 <div align="center">
 
 ## Authors
@@ -144,7 +178,7 @@ The prototypes of all your functions should be included in your header file call
 
 <br>
 
-Last updated: July 19, 2023
+Last updated: July 25, 2023
 
 </div>
 
